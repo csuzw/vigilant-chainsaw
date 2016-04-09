@@ -8,10 +8,7 @@ install:
   - nuget install NUnit.Runners -OutputDirectory testrunner
   - nuget install ReportUnit -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release src/VigilantChainsaw.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./src/VigilantChainsaw.Services.Index.Tests/bin/Release/VigilantChainsaw.Services.Index.Tests.dll --result:./output/tests/Services-Index-Tests.xml
-  - mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe ./ouptut/tests ./ouptut/compiled
+  - bash ./build-solution.sh
+  - bash ./run-tests.sh
   - bash ./deploy-gh-pages.sh
-  - docker build -t csuzw/vigilant-chainsaw-application:$MAJOR_VERSION.$TRAVIS_BUILD_NUMBER ./src/VigilantChainsaw.Application/bin/Release/
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push csuzw/vigilant-chainsaw-application:$MAJOR_VERSION.$TRAVIS_BUILD_NUMBER
+  - bash ./build-docker-image.sh

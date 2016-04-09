@@ -1,10 +1,16 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-# go to the out directory 
+# create output directory
+mkdir -p .output/compiled
+
+# compile test results
+mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe ./ouptut/tests ./ouptut/compiled
+
+# move to output directory
 cd ./ouptut/compiled
 
-# fix index page capitalization
+# fix output
 mv Index.html index.html -f
 sed -i '/s/Index.html/index.html/g' *.html
 
