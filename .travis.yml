@@ -10,7 +10,7 @@ install:
 script:
   - xbuild /p:Configuration=Release src/VigilantChainsaw.sln
   - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./src/VigilantChainsaw.Services.Index.Tests/bin/Release/VigilantChainsaw.Services.Index.Tests.dll
-  - mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe ./testrunner/NUnit.ConsoleRunner.*/tools/ ./testoutput
+  - mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe . ./testoutput
   - bash ./deploy-gh-pages.sh
   - docker build -t csuzw/vigilant-chainsaw-application:$MAJOR_VERSION.$TRAVIS_BUILD_NUMBER ./src/VigilantChainsaw.Application/bin/Release/
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
