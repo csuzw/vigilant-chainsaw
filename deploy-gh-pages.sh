@@ -1,11 +1,14 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-# go to the out directory and create a *new* Git repo
-cd testoutput
+# go to the out directory 
+cd ./ouptut/compiled
 
+# fix index page capitalization
 mv Index.html index.html -f
+sed -i '/s/Index.html/index.html/g' *.html
 
+# create a *new* Git repo
 git init
 
 # inside this git repo we'll pretend to be a new user
