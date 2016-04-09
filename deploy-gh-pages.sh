@@ -5,10 +5,10 @@ set -e # exit with nonzero exit code if anything fails
 mkdir -p .output/compiled
 
 # compile test results
-mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe ./ouptut/tests ./ouptut/compiled
+mono ./testrunner/ReportUnit.*/tools/ReportUnit.exe ./output/tests ./output/compiled
 
 # move to output directory
-cd ./ouptut/compiled
+cd ./output/compiled
 
 # fix output
 mv Index.html index.html -f
