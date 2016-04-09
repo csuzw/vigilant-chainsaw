@@ -1,4 +1,4 @@
-﻿FROM mono
+FROM mono
 RUN mkdir /app
 COPY . /app
 EXPOSE 3579
