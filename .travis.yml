@@ -10,5 +10,5 @@ script:
   - xbuild /p:Configuration=Release src/VigilantChainsaw.sln
   - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./src/VigilantChainsaw.Services.Index.Tests/bin/Release/VigilantChainsaw.Services.Index.Tests.dll
   - docker build -t vigilant-chainsaw-application:1.$TRAVIS_BUILD_NUMBER ./src/VigilantChainsaw.Application/bin/Release/
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" csuzw/vigilant-chainsaw
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" https://hub.docker.com/r/csuzw/vigilant-chainsaw/
   - docker push vigilant-chainsaw-application:1.$TRAVIS_BUILD_NUMBER
