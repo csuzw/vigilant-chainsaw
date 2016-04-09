@@ -12,7 +12,8 @@ cd ./output/compiled
 
 # fix output
 mv Index.html index.html -f
-sed -i '/s/Index.html/index.html/g' *.html
+find . -type f -exec sed -i '/s/Index.html/index.html/g' {} \;
+# inject build number
 
 # create a *new* Git repo
 git init
