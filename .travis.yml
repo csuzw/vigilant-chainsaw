@@ -11,5 +11,5 @@ script:
   - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./src/VigilantChainsaw.Services.Index.Tests/bin/Release/VigilantChainsaw.Services.Index.Tests.dll
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t vigilant-chainsaw-application:1.$TRAVIS_BUILD_NUMBER ./src/VigilantChainsaw.Application/bin/Release/
-  - docker tag vigilant-chainsaw-application:1.$TRAVIS_BUILD_NUMBER csuzw/vigilant-chainsaw
-  - docker push csuzw/vigilant-chainsaw
+  - docker tag vigilant-chainsaw-application:1.$TRAVIS_BUILD_NUMBER csuzw/vigilant-chainsaw:a1.$TRAVIS_BUILD_NUMBER
+  - docker push csuzw/vigilant-chainsaw:a1.$TRAVIS_BUILD_NUMBER

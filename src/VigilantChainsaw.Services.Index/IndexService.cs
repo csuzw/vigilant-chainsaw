@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace VigilantChainsaw.Services.Index
 {
@@ -12,6 +13,11 @@ namespace VigilantChainsaw.Services.Index
         public string GetOperatingSystem()
         {
             return Environment.OSVersion.ToString();
+        }
+
+        public string GetVersion()
+        {
+            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }

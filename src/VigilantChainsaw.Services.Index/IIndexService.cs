@@ -4,5 +4,6 @@
     {
         string Get();
         string GetOperatingSystem();
+        string GetVersion();
     }
 }

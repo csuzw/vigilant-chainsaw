@@ -9,6 +9,7 @@ namespace VigilantChainsaw.Application.Modules
         {
             Get["/"] = _ => service.Get();
             Get["/os"] = _ => service.GetOperatingSystem();
+            Get["/version"] = _ => service.GetVersion();
         } 
     }
 }
