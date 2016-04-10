@@ -9,6 +9,7 @@ namespace VigilantChainsaw.Framework
 
         public Bootstrapper(IMicroserviceConfiguration config) : base()
         {
+            StaticConfiguration.DisableErrorTraces = false;
             _config = config;
         }
 
