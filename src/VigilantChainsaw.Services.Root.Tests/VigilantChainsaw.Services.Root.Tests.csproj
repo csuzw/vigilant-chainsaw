@@ -7,8 +7,8 @@
     <ProjectGuid>{7DB124A4-E302-462C-AE29-0F3F1871F796}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VigilantChainsaw.Services.Index.Tests</RootNamespace>
-    <AssemblyName>VigilantChainsaw.Services.Index.Tests</AssemblyName>
+    <RootNamespace>VigilantChainsaw.Services.Root.Tests</RootNamespace>
+    <AssemblyName>VigilantChainsaw.Services.Root.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -48,16 +48,16 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="IndexServiceTests.cs" />
+    <Compile Include="RootServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VigilantChainsaw.Services.Index\VigilantChainsaw.Services.Index.csproj">
+    <ProjectReference Include="..\VigilantChainsaw.Services.Root\VigilantChainsaw.Services.Root.csproj">
       <Project>{FF8CFB41-A517-4622-A973-5620C17EA2D1}</Project>
-      <Name>VigilantChainsaw.Services.Index</Name>
+      <Name>VigilantChainsaw.Services.Root</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

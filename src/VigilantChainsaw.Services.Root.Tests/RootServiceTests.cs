@@ -2,16 +2,16 @@
 using System;
 using System.Reflection;
 
-namespace VigilantChainsaw.Services.Index.Tests
+namespace VigilantChainsaw.Services.Root.Tests
 {
     [TestFixture]
-    public class IndexServiceTests
+    public class RootServiceTests
     {
         [Test]
         public void Get_ShouldReturnHelloWorld()
         {
             // ARRANGE
-            var service = new IndexService();
+            var service = new RootService();
 
             // ACT
             var actual = service.Get();
@@ -24,7 +24,7 @@ namespace VigilantChainsaw.Services.Index.Tests
         public void GetOperatingSystem_ShouldReturnOperatingSystemVersion()
         {
             // ARRANGE
-            var service = new IndexService();
+            var service = new RootService();
 
             // ACT
             var actual = service.GetOperatingSystem();
@@ -37,7 +37,7 @@ namespace VigilantChainsaw.Services.Index.Tests
         public void GetVersion_ShouldReturnAssemblyVersion()
         {
             // ARRANGE
-            var service = new IndexService();
+            var service = new RootService();
 
             // ACT
             var actual = service.GetVersion();

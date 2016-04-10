@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
 
-namespace VigilantChainsaw.Services.Index
+namespace VigilantChainsaw.Services.Root
 {
-    public class IndexService : IIndexService
+    public class RootService : IRootService
     {
         public string Get()
         {

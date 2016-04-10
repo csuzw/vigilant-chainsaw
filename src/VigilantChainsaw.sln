@@ -14,9 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Globals", "Globals", "{53B9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{00183EBD-25E1-4578-A777-C273D6A511F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigilantChainsaw.Services.Index", "VigilantChainsaw.Services.Index\VigilantChainsaw.Services.Index.csproj", "{FF8CFB41-A517-4622-A973-5620C17EA2D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigilantChainsaw.Services.Root", "VigilantChainsaw.Services.Root\VigilantChainsaw.Services.Root.csproj", "{FF8CFB41-A517-4622-A973-5620C17EA2D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigilantChainsaw.Services.Index.Tests", "VigilantChainsaw.Services.Index.Tests\VigilantChainsaw.Services.Index.Tests.csproj", "{7DB124A4-E302-462C-AE29-0F3F1871F796}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigilantChainsaw.Services.Root.Tests", "VigilantChainsaw.Services.Root.Tests\VigilantChainsaw.Services.Root.Tests.csproj", "{7DB124A4-E302-462C-AE29-0F3F1871F796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
-﻿namespace VigilantChainsaw.Services.Index
+﻿namespace VigilantChainsaw.Services.Root
 {
-    public interface IIndexService
+    public interface IRootService
     {
         string Get();
         string GetOperatingSystem();

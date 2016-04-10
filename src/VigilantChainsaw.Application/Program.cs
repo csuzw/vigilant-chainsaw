@@ -1,7 +1,7 @@
 ﻿using System;
-using Nancy.Hosting.Self;
 using Mono.Unix;
 using Mono.Unix.Native;
+using Microsoft.Owin.Hosting;
 
 namespace VigilantChainsaw.Application
 {
@@ -9,17 +9,11 @@ namespace VigilantChainsaw.Application
     {
         static void Main(string[] args)
         {
-            var configuration = new HostConfiguration
-            {
-                UrlReservations = new UrlReservations { CreateAutomatically = true }
-            };
-            var uri = new Uri("http://localhost:3579");
+            var baseAddress = "http://+:3579";
 
-            using (var host = new NancyHost(configuration, uri))
+            using (WebApp.Start<Startup>(baseAddress))
             {
-                host.Start();
-
-                Console.WriteLine("Your application is running on " + uri);
+                Console.WriteLine("Your application is running on " + baseAddress);
                 Console.WriteLine("Press any [Enter] to close the host.");
                 WaitForTerminator();
             }
