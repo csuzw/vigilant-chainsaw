@@ -1,5 +1,6 @@
 ﻿using Consul;
 using RestSharp;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using VigilantChainsaw.Common.Framework;
@@ -10,7 +11,9 @@ namespace VigilantChainsaw.Framework.ServiceDiscovery
     {
         public async Task<TResponse> Get<TResponse>(string service, string resource)
         {
+            Console.WriteLine("ServiceHelper: Get({0}, {1})", service, resource);
             var url = await GetServiceUrl(service);
+            Console.WriteLine("ServiceHelper: {0}/{1}", url, resource);
             if (string.IsNullOrWhiteSpace(url)) return default(TResponse);
 
             var client = new RestClient(url);
