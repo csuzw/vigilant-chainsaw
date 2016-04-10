@@ -12,8 +12,7 @@ cd ./output/compiled
 
 # fix output
 mv Index.html index.html -f
-sed -i 's@Index.html@index.html@g' *.html
-sed -i 's@<span>ReportUnit</span>@<span>Vigilant Chainsaw ${APP_VERSION}.${TRAVIS_BUILD_NUMBER}</span>@g' *.html
+sed -i -e "s@Index.html@index.html@g" -e "s@<span>ReportUnit</span>@<span>Vigilant Chainsaw ${APP_VERSION}.${TRAVIS_BUILD_NUMBER}</span>@g" *.html
 # inject build number
 
 # create a *new* Git repo
