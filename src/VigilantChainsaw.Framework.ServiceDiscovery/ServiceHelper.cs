@@ -11,12 +11,16 @@ namespace VigilantChainsaw.Framework.ServiceDiscovery
     {
         public async Task<TResponse> Get<TResponse>(string service, string resource)
         {
+            Console.WriteLine("ServiceHelper.Get: service = {0}, resource = {1}", service, resource);
             var url = await GetServiceUrl(service);
+
+            Console.WriteLine("ServiceHelper.Get: url = {0}", url);
             if (string.IsNullOrWhiteSpace(url)) return default(TResponse);
 
             var client = new RestClient(url);
             var request = new RestRequest(resource, Method.GET);
             var response = await client.ExecuteGetTaskAsync<TResponse>(request);
+            Console.WriteLine("ServiceHelper.Get: status = {0}", response.StatusCode);
 
             return response != null ? response.Data : default(TResponse);
         }
