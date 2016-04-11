@@ -1,0 +1,38 @@
+version: '2'
+services:
+  consul:
+    image: progrium/consul
+    container_name: consul
+    ports:
+      - "8300:8300"
+      - "8400:8400"
+      - "8500:8500"
+      - "53:53/udp"
+    command: -server -bootstrap
+    networks:
+      - vc
+  registrator:
+    image: gliderlabs/registrator
+    container_name: registrator
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+    command: consul://consul:8500
+    networks:
+      - vc
+  vc-animal:
+    image: csuzw/vigilant-chainsaw-animal
+    container_name: vigilant-chainsaw-animal
+    ports:
+      - "3579:3579"
+    networks:
+      - vc
+  vc-zoo:
+    image: csuzw/vigilant-chainsaw-zoo
+    container_name: vigilant-chainsaw-zoo
+    ports:
+      - "3580:3580"
+    networks:
+      - vc
+networks:
+  vc:
+    driver: bridge
